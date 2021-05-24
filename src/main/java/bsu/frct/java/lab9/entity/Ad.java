@@ -69,4 +69,30 @@ public class Ad implements Serializable, Identifiable {
         this.lastModified = lastModified;
         lastModifiedDate = new Date(lastModified);
     }
+    public Date getLastModifiedDate() {
+        return lastModifiedDate;
+    }
+
+    public int hashCode() {
+        return id;
+    }
+
+    public boolean equals(Object obj) {
+        if(this == obj)
+            return true;
+
+        if(obj == null)
+            return false;
+
+        if(getClass() != obj.getClass())
+            return false;
+
+        Ad other = (Ad) obj;
+
+        if(id != other.id)
+            return false;
+
+        return true;
+    }
+
 }
